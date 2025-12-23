@@ -3,402 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESUME.TXT - 系统访问</title>
-    <style>
-        /* 全局样式重置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* 页面主体样式 - 黑客风格黑色背景 */
-        body {
-            background-color: #0a0a0a; /* 深黑色背景 */
-            color: #00ff00; /* 经典绿色文字 */
-            font-family: 'Courier New', 'Monaco', 'Consolas', monospace; /* 等宽字体 */
-            font-size: 16px;
-            line-height: 1.6;
-            padding: 20px;
-            overflow-x: hidden; /* 防止横向滚动 */
-            min-height: 100vh; /* 确保页面至少占满视口高度 */
-        }
-
-        /* 终端容器样式 */
-        .terminal {
-            max-width: 900px; /* 限制最大宽度，保持终端感 */
-            margin: 0 auto; /* 居中显示 */
-            padding: 20px;
-            border: 2px solid #00ff00; /* 绿色边框 */
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); /* 绿色发光效果 */
-            background-color: #000000; /* 纯黑背景 */
-        }
-
-        /* 终端头部样式 */
-        .terminal-header {
-            border-bottom: 1px solid #00ff00;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* 终端标题样式 */
-        .terminal-title {
-            color: #00ffff; /* 青色标题 */
-            font-weight: bold;
-            text-transform: uppercase; /* 大写字母 */
-            letter-spacing: 2px; /* 字母间距 */
-        }
-
-        /* 状态指示器样式 */
-        .status {
-            color: #ff0000; /* 红色状态 */
-            animation: blink 1s infinite; /* 闪烁动画 */
-        }
-
-        /* 闪烁动画定义 */
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
-        }
-
-        /* 命令行提示符样式 */
-        .prompt {
-            color: #00ff00;
-            margin-right: 10px;
-        }
-
-        /* 命令输入区域样式 */
-        .command-line {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        /* 光标样式 - 闪烁效果 */
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 20px;
-            background-color: #00ff00;
-            animation: blink-cursor 1s infinite; /* 光标闪烁动画 */
-            margin-left: 5px;
-        }
-
-        /* 光标闪烁动画定义 */
-        @keyframes blink-cursor {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        /* 输出内容区域样式 */
-        .output {
-            margin: 20px 0;
-            white-space: pre-wrap; /* 保留空格和换行 */
-            word-wrap: break-word; /* 长单词自动换行 */
-        }
-
-        /* ASCII 艺术样式 */
-        .ascii-art {
-            color: #00ffff; /* 青色 ASCII 艺术 */
-            font-size: 12px;
-            line-height: 1.2;
-            margin: 20px 0;
-            text-align: center; /* 居中显示 */
-        }
-
-        /* 章节标题样式 */
-        .section-title {
-            color: #ffff00; /* 黄色章节标题 */
-            font-weight: bold;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed #00ff00; /* 虚线边框 */
-            padding-bottom: 5px;
-        }
-
-        /* 列表项样式 */
-        .list-item {
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        /* 列表项前的标记样式 */
-        .list-item::before {
-            content: "> ";
-            color: #00ffff;
-            position: absolute;
-            left: 0;
-        }
-
-        /* 高亮文本样式 */
-        .highlight {
-            color: #ffff00; /* 黄色高亮 */
-            font-weight: bold;
-        }
-
-        /* 链接样式 */
-        a {
-            color: #00ffff; /* 青色链接 */
-            text-decoration: none; /* 无下划线 */
-            transition: color 0.3s; /* 颜色过渡效果 */
-        }
-
-        /* 链接悬停效果 */
-        a:hover {
-            color: #ffffff; /* 悬停时变白色 */
-            text-decoration: underline; /* 显示下划线 */
-        }
-
-        /* 打字机效果容器 */
-        .typing {
-            display: inline-block;
-        }
-
-        /* 响应式设计 - 移动端适配 */
-        @media (max-width: 768px) {
-            body {
-                font-size: 14px;
-                padding: 10px;
-            }
-            
-            .terminal {
-                padding: 15px;
-                border-width: 1px;
-            }
-            
-            .ascii-art {
-                font-size: 10px;
-            }
-        }
-
-        /* 滚动条样式 - 黑客风格 */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #000000;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00ff00;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00ffff;
-        }
-    </style>
+    <title>张三 (San Zhang) - 学术简历</title>
+    <meta name="description" content="张三的科研主页，包含教育经历、研究方向和发表论文。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- 终端容器开始 -->
-    <div class="terminal">
-        <!-- 终端头部 -->
-        <div class="terminal-header">
-            <div class="terminal-title">RESUME.TXT - 系统访问</div>
-            <div class="status">● 在线</div>
-        </div>
 
-        <!-- 命令行提示符 -->
-        <div class="command-line">
-            <span class="prompt">root@system:~$</span>
-            <span class="typing" id="command"></span>
-            <span class="cursor"></span>
-        </div>
+    <div class="container">
+        <header class="profile-header">
+            <div class="profile-img">
+                <img src="https://via.placeholder.com/150" alt="张三的照片">
+            </div>
+            <div class="profile-info">
+                <h1>张三 <span class="en-name">(San Zhang)</span></h1>
+                <p class="title">博士研究生 / 计算机科学与技术</p>
+                <p class="affiliation">北京大学 xx 实验室</p>
+                
+                <div class="social-links">
+                    <a href="mailto:your-email@example.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                </div>
+            </div>
+        </header>
 
-        <!-- 输出内容区域 -->
-        <div class="output" id="output"></div>
+        <hr>
+
+        <section id="about">
+            <h2><i class="fas fa-user"></i> 个人简介</h2>
+            <p>
+                主要研究方向为<b>深度学习</b>、<b>计算机视觉</b>以及<b>自然语言处理</b>。
+                致力于通过人工智能技术解决现实世界中的复杂问题。目前正在导师 xxx 教授的指导下进行 xxx 课题的研究。
+            </p>
+            <ul class="info-list">
+                <li><strong>性别：</strong> 男</li>
+                <li><strong>所在地：</strong> 中国，北京</li>
+                <li><strong>研究兴趣：</strong> 机器学习，强化学习，大数据分析</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2><i class="fas fa-university"></i> 教育经历</h2>
+            <div class="timeline-item">
+                <div class="date">2021 - 至今</div>
+                <div class="content">
+                    <h3>北京大学 (Peking University)</h3>
+                    <p>博士 / 计算机应用技术</p>
+                    <p class="note">导师：xxx 教授 | 预计毕业时间：2025年</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2017 - 2021</div>
+                <div class="content">
+                    <h3>某某大学 (XX University)</h3>
+                    <p>学士 / 软件工程</p>
+                    <p class="note">GPA: 3.8/4.0 | 优秀毕业生</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2><i class="fas fa-book"></i> 代表性论文</h2>
+            <ul class="paper-list">
+                <li>
+                    <span class="paper-title">Deep Learning for X Problem Solving.</span>
+                    <br>
+                    <strong>San Zhang</strong>, Li Si, Wang Wu.
+                    <br>
+                    <span class="journal">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2023.</span>
+                    <div class="paper-links">
+                        <a href="#">[PDF]</a> <a href="#">[Code]</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="paper-title">A Novel Approach to Y Algorithm.</span>
+                    <br>
+                    Li Si, <strong>San Zhang</strong> (Co-first author).
+                    <br>
+                    <span class="journal">Journal of Machine Learning Research (JMLR), 2022.</span>
+                    <div class="paper-links">
+                        <a href="#">[PDF]</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> 科研与实习经历</h2>
+            <div class="timeline-item">
+                <div class="date">2022.06 - 2022.09</div>
+                <div class="content">
+                    <h3>微软亚洲研究院 (MSRA)</h3>
+                    <p>研究实习生</p>
+                    <ul>
+                        <li>参与了大规模预训练模型的优化工作。</li>
+                        <li>复现了 SOTA 算法，并在内部数据集上提升了 2% 的准确率。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2><i class="fas fa-tools"></i> 技术栈</h2>
+            <div class="tags">
+                <span>Python</span>
+                <span>PyTorch</span>
+                <span>TensorFlow</span>
+                <span>LaTeX</span>
+                <span>Linux</span>
+                <span>Docker</span>
+                <span>Git</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 San Zhang. Hosted on GitHub Pages.</p>
+        </footer>
     </div>
 
-    <script>
-        // 随机简历数据生成器
-        const resumeData = {
-            // 随机姓名列表
-            names: ['Alex Chen', 'Sam Zhang', 'Jordan Li', 'Taylor Wang', 'Casey Liu'],
-            // 随机职位列表
-            positions: ['全栈开发工程师', '网络安全专家', '系统架构师', 'DevOps工程师', 'AI算法工程师'],
-            // 随机技能列表
-            skills: [
-                ['JavaScript', 'Python', 'Go', 'Rust', 'C++'],
-                ['React', 'Vue', 'Node.js', 'Django', 'Flask'],
-                ['Docker', 'Kubernetes', 'AWS', 'Linux', 'Git'],
-                ['MySQL', 'MongoDB', 'Redis', 'Elasticsearch'],
-                ['机器学习', '深度学习', '数据分析', '算法优化']
-            ],
-            // 随机公司列表
-            companies: ['TechCorp', 'DataSys', 'CloudNet', 'SecureSoft', 'AI Solutions'],
-            // 随机项目列表
-            projects: [
-                { name: '分布式系统架构设计', desc: '设计并实现高可用微服务架构，支持百万级并发' },
-                { name: '安全漏洞扫描工具', desc: '开发自动化安全检测系统，发现并修复潜在威胁' },
-                { name: '实时数据处理平台', desc: '构建低延迟数据处理系统，处理TB级数据流' },
-                { name: '智能推荐引擎', desc: '基于深度学习的个性化推荐系统，提升转化率30%' },
-                { name: '容器化部署方案', desc: '实现CI/CD自动化流程，部署效率提升5倍' }
-            ],
-            // 随机教育背景
-            educations: [
-                { school: '清华大学', major: '计算机科学与技术', degree: '硕士' },
-                { school: '北京大学', major: '软件工程', degree: '本科' },
-                { school: '中科院', major: '人工智能', degree: '博士' },
-                { school: '上海交通大学', major: '信息安全', degree: '硕士' }
-            ]
-        };
-
-        // 随机选择函数
-        function randomChoice(array) {
-            return array[Math.floor(Math.random() * array.length)];
-        }
-
-        // 生成随机简历内容
-        function generateResume() {
-            const name = randomChoice(resumeData.names);
-            const position = randomChoice(resumeData.positions);
-            const skills = randomChoice(resumeData.skills);
-            const company = randomChoice(resumeData.companies);
-            const projects = resumeData.projects.sort(() => Math.random() - 0.5).slice(0, 3);
-            const education = randomChoice(resumeData.educations);
-            const years = Math.floor(Math.random() * 5) + 3; // 3-7年经验
-
-            return {
-                name,
-                position,
-                skills,
-                company,
-                projects,
-                education,
-                years
-            };
-        }
-
-        // 打字机效果函数
-        function typeWriter(element, text, speed = 50, callback = null) {
-            let i = 0;
-            element.textContent = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                } else {
-                    if (callback) callback();
-                }
-            }
-            
-            type();
-        }
-
-        // 生成ASCII艺术字
-        function generateASCIIArt(text) {
-            // 简单的ASCII艺术生成
-            const lines = [
-                '╔═══════════════════════════════════════╗',
-                '║                                       ║',
-                `║         ${text.toUpperCase().padEnd(25)}         ║`,
-                '║                                       ║',
-                '╚═══════════════════════════════════════╝'
-            ];
-            return lines.join('\n');
-        }
-
-        // 格式化简历输出
-        function formatResume(resume) {
-            let output = '';
-            
-            // ASCII 艺术标题
-            output += generateASCIIArt(resume.name) + '\n\n';
-            
-            // 个人信息
-            output += '═══════════════════════════════════════════════════\n';
-            output += '【个人信息】\n';
-            output += '═══════════════════════════════════════════════════\n';
-            output += `姓名: ${resume.name}\n`;
-            output += `职位: ${resume.position}\n`;
-            output += `经验: ${resume.years} 年\n`;
-            output += `邮箱: ${resume.name.toLowerCase().replace(' ', '.')}@hacker.dev\n`;
-            output += `GitHub: github.com/${resume.name.toLowerCase().replace(' ', '')}\n\n`;
-            
-            // 技能
-            output += '═══════════════════════════════════════════════════\n';
-            output += '【技能专长】\n';
-            output += '═══════════════════════════════════════════════════\n';
-            resume.skills.forEach((skill, index) => {
-                output += `  [${index + 1}] ${skill}\n`;
-            });
-            output += '\n';
-            
-            // 工作经历
-            output += '═══════════════════════════════════════════════════\n';
-            output += '【工作经历】\n';
-            output += '═══════════════════════════════════════════════════\n';
-            output += `${resume.company} | ${resume.position}\n`;
-            output += `2020 - 至今 | 负责核心系统开发与优化\n`;
-            output += `  • 参与${resume.years}个大型项目的架构设计与实现\n`;
-            output += `  • 优化系统性能，响应时间降低60%\n`;
-            output += `  • 建立自动化测试流程，代码覆盖率提升至85%\n\n`;
-            
-            // 项目经验
-            output += '═══════════════════════════════════════════════════\n';
-            output += '【项目经验】\n';
-            output += '═══════════════════════════════════════════════════\n';
-            resume.projects.forEach((project, index) => {
-                output += `[项目 ${index + 1}] ${project.name}\n`;
-                output += `  描述: ${project.desc}\n`;
-                output += `  技术栈: ${resume.skills.slice(0, 3).join(', ')}\n\n`;
-            });
-            
-            // 教育背景
-            output += '═══════════════════════════════════════════════════\n';
-            output += '【教育背景】\n';
-            output += '═══════════════════════════════════════════════════\n';
-            output += `${resume.education.school} | ${resume.education.major}\n`;
-            output += `${resume.education.degree} | 2015 - 2019\n\n`;
-            
-            // 底部信息
-            output += '═══════════════════════════════════════════════════\n';
-            output += '【系统信息】\n';
-            output += '═══════════════════════════════════════════════════\n';
-            output += `访问时间: ${new Date().toLocaleString('zh-CN')}\n`;
-            output += `系统状态: 正常运行\n`;
-            output += `安全级别: 最高\n\n`;
-            output += '>>> 输入 "contact" 查看联系方式\n';
-            output += '>>> 输入 "skills" 查看详细技能\n';
-            output += '>>> 输入 "projects" 查看项目详情\n';
-            
-            return output;
-        }
-
-        // 页面加载完成后执行
-        window.addEventListener('DOMContentLoaded', function() {
-            const commandElement = document.getElementById('command');
-            const outputElement = document.getElementById('output');
-            
-            // 生成随机简历
-            const resume = generateResume();
-            
-            // 显示命令
-            typeWriter(commandElement, 'cat resume.txt', 100, function() {
-                // 命令输入完成后，延迟显示输出
-                setTimeout(function() {
-                    // 格式化并显示简历内容
-                    const resumeText = formatResume(resume);
-                    typeWriter(outputElement, resumeText, 30);
-                }, 500);
-            });
-        });
-
-        // 添加键盘交互功能（可选）
-        document.addEventListener('keydown', function(event) {
-            // 如果用户按下回车键，可以添加交互功能
-            if (event.key === 'Enter') {
-                // 这里可以添加更多交互逻辑
-                console.log('Enter pressed');
-            }
-        });
-    </script>
 </body>
 </html>
